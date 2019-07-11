@@ -1,3 +1,4 @@
+// Part 2 = https://www.youtube.com/watch?v=vtZNewraVN4&t= { Hier ben ik gebleven }
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -7,6 +8,15 @@ const path = require("path");
 
 // Initialize Appliation
 const app = express();
+
+// Defining middlewares
+app.use(cors());
+app.use(bodyParser.json());
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Setup the static folder
+app.use(express.static(path.join(__dirname, "public")));
 
 // Index Route
 app.get("/", (req, res) => {
