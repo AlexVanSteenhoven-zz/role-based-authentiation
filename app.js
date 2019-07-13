@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Index Route
 app.get("/", (req, res) => {
-  res.json({ msg: "Running Successfully" });
+  res.json({ msg: "Welcome this is an basic route" });
 });
 
 // Listen on the defined port
